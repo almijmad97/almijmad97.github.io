@@ -3,74 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحة ويب باستخدام Bootstrap</title>
-
-  <!-- ربط ملف Bootstrap من شبكة CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJfD7JJEcOZ6pYkIPl8fsX15lg7mI4wCQ5ebA7Qm6bfbF3zpk9eY7L7KkzD9" crossorigin="anonymous">
-  
+  <title>صفحة ويب باستخدام HTML و CSS</title>
   <style>
-    /* تنسيق الفقرات */
-    .justify-text {
-      text-align: justify;
+    /* تنسيق الصفحة */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
-    /* تخصيص القوائم */
-    .list-section {
-      background-color: #f8f9fa;
+
+    /* الشريط العلوي */
+    .header {
+      display: flex;
+      justify-content: center; /* توسيط المحتوى */
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      flex-direction: column; /* جعل العناصر في عمود */
+    }
+
+    .header img {
+      height: 100px;
+    }
+
+    /* الناف بار */
+    .navbar {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-top: 10px; /* لتوفير مساحة بين اللوجو والناف بار */
+    }
+
+    .navbar li {
+      margin-left: 20px;
+    }
+
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* الحاوية الرئيسية */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    /* تنسيق الأعمدة */
+    .column {
+      background-color: #ffffff;
       padding: 20px;
       border-radius: 8px;
-      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* القائمة اليسرى واليمنى */
+    .left-column, .right-column {
+      width: 25%;
+    }
+
+    /* العمود الأوسط (الفقرات) */
+    .center-column {
+      width: 45%;
+    }
+
+    /* تنسيق العناوين */
+    h1, h4 {
+      text-align: center;
+    }
+
+    /* تنسيق الفقرات */
+    p {
+      text-align: justify;
+    }
+
+    /* تنسيق القوائم */
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    /* استجابة تصميم الصفحة للأجهزة الصغيرة */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-column, .right-column, .center-column {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        margin-top: 10px;
+      }
+
+      .navbar li {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container my-5">
-    <!-- صف يحتوي على الأعمدة -->
-    <div class="row">
-      <!-- العمود الأول (القائمة اليسرى) -->
-      <div class="col-md-3 col-12 mb-4">
-        <div class="list-section">
-          <h4>القائمة اليسرى</h4>
-          <ul class="list-unstyled">
-            <li>عنصر 1</li>
-            <li>عنصر 2</li>
-            <li>عنصر 3</li>
-            <li>عنصر 4</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- العمود الثاني (الفقرات في المنتصف) -->
-      <div class="col-md-6 col-12 mb-4">
-        <h1 class="text-center mb-4">أهلاً بكم في صفحة الويب</h1>
-
-        <p class="justify-text">
-          هذه فقرة تجريبية يتم تنسيقها باستخدام خاصية "justify" في CSS. يتم استخدام هذه الخاصية لجعل النص ممتدًا بشكل متساوٍ عبر عرض الفقرة، مما يعطي مظهرًا مرتبًا وجميلًا.
-        </p>
-
-        <p class="justify-text">
-          يمكنك استخدام Bootstrap مع CSS لتنسيق العناصر بسهولة. على سبيل المثال، نحن نستخدم هنا الـ container لتحديد عرض الصفحة ونتيح لك استخدام فئات CSS وخصائص Bootstrap المدمجة لتصميم العناصر بطريقة أكثر مرونة.
-        </p>
-      </div>
-
-      <!-- العمود الثالث (القائمة اليمنى) -->
-      <div class="col-md-3 col-12 mb-4">
-        <div class="list-section">
-          <h4>القائمة اليمنى</h4>
-          <ul class="list-unstyled">
-            <li>عنصر A</li>
-            <li>عنصر B</li>
-            <li>عنصر C</li>
-            <li>عنصر D</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+  <!-- الشريط العلوي الذي يحتوي على اللوجو والناف بار -->
+  <div class="header">
+    <img src="post.png" width="150" alt="Logo">
+    <ul class="navbar">
+      <li><a href="#">الرئيسية</a></li>
+      <li><a href="#">حول</a></li>
+      <li><a href="#">اتصل بنا</a></li>
+    </ul>
   </div>
 
-  <!-- ربط ملف Bootstrap من شبكة CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb7j1d1Jf49POZVV3l+pq6etnB9Ktu3S5pH23m5k7FY0lWv4p" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0c9pWlY+U5ZaFflr+eM6DgxIFeSFJ0W5zjISb0A51yI5NE+2" crossorigin="anonymous"></script>
+  <!-- الحاوية الرئيسية -->
+  <div class="container">
+    <!-- العمود اليسار -->
+    <div class="column left-column">
+      <h4>القائمة اليسرى</h4>
+      <ul>
+        <li>عنصر 1</li>
+        <li>عنصر 2</li>
+        <li>عنصر 3</li>
+        <li>عنصر 4</li>
+      </ul>
+    </div>
+
+    <!-- العمود الوسط (الفقرات) -->
+    <div class="column center-column">
+      <h1>أهلاً بكم في صفحة الويب</h1>
+
+      <p>
+        هذه فقرة تجريبية يتم تنسيقها باستخدام خاصية "justify" في CSS. يتم استخدام هذه الخاصية لجعل النص ممتدًا بشكل متساوٍ عبر عرض الفقرة، مما يعطي مظهرًا مرتبًا وجميلًا.
+      </p>
+
+      <p>
+        يمكنك استخدام CSS لتنسيق العناصر بسهولة. على سبيل المثال، نحن نستخدم هنا الـ flexbox لتحديد عرض الصفحة بشكل مرن، مما يساعد في ترتيب الأعمدة بشكل جيد على جميع الأجهزة.
+      </p>
+    </div>
+
+    <!-- العمود اليمين -->
+    <div class="column right-column">
+      <h4>القائمة اليمنى</h4>
+      <ul>
+        <li>عنصر A</li>
+        <li>عنصر B</li>
+        <li>عنصر C</li>
+        <li>عنصر D</li>
+      </ul>
+    </div>
+  </div>
 
 </body>
 </html>
